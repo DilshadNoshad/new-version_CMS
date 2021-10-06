@@ -59,10 +59,22 @@
           <!-- Navbar Menu -->
           <div id="navbarcollapse" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
+              <?php
+              $query = 'SELECT * FROM categories';
+              $select_all_categories_query = mysqli_query($connection, $query);
+
+              while($row = mysqli_fetch_assoc($select_all_categories_query)){
+                $cat_title = $row['cat_title'];
+
+                echo "<li class='nav-item'>
+                <a href='#' class='nav-link'>{$cat_title}</a>
+              </li>";
+              }
+              ?>
+              <!-- <li class="nav-item">
                 <a href="index.php" class="nav-link active">Home</a>
-              </li>
-              <li class="nav-item">
+              </li> -->
+              <!-- <li class="nav-item">
                 <a href="blog.php" class="nav-link">Blog</a>
               </li>
               <li class="nav-item">
@@ -70,7 +82,7 @@
               </li>
               <li class="nav-item">
                 <a href="login.html" class="nav-link">Admin Area</a>
-              </li>
+              </li> -->
             </ul>
             <div class="navbar-text">
               <a href="#" class="search-btn"><i class="icon-search-1"></i></a>
