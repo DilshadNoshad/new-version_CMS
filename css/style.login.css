@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --primary: #673179;
+  --secondary: #8b3789;
+  --white: #fff;
+  --gray: #d9d9d9;
+  --gradient: linear-gradient(135deg, #853488 51%, #63317d 87%);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 4rem;
+  padding: 0 2rem;
+}
+
+.container::before {
+  content: "";
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: url("/img/blob.png") no-repeat;
+  background-size: cover;
+  top: 0px;
+  left: 0px;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  z-index: -1;
+}
+
+.image {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.image img {
+  width: 500px;
+}
+
+.login-section {
+  display: flex;
+  align-items: center;
+}
+
+form {
+  width: 400px;
+}
+form h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin: 15px 0;
+  color: var(--primary);
+}
+
+.admin-logo {
+  width: 25%;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
+}
+.input-section {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  margin: 25px 0;
+  padding: 5px 0;
+  border-bottom: none;
+  position: relative;
+}
+.input-section.focus .input-field h5 {
+  top: -5px;
+  font-size: 15px;
+}
+
+.input-section.focus:after {
+  background: var(--secondary);
+}
+.input-section:after {
+  content: "";
+  background: var(--gray);
+  display: block;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.input-section.input-one {
+  margin-top: 0;
+}
+.input-section.input-one {
+  margin-bottom: 4px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+}
+.icon i {
+  color: var(--primary);
+}
+
+.input-section .input-field {
+  position: relative;
+  height: 40px;
+}
+.input-section .input-field h5 {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--secondary);
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.5rem 0.7rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+}
+
+a {
+  display: block;
+  text-align: right;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+a:hover {
+  color: var(--secondary);
+  transition: 0.3s;
+}
+
+.btn {
+  height: 50px;
+  width: 100%;
+  display: block;
+  border-radius: 50px;
+  margin: 2rem 0;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  background: var(--gradient);
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.5s;
+  font-family: "Roboto", sans-serif;
+  background-size: 120%;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+@media screen and (max-width: 1050px) {
+  .container {
+    column-gap: 2rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .image img {
+    width: 450px;
+  }
+  form {
+    width: 350px;
+  }
+
+  .admin-logo {
+    width: 29%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .image img {
+    display: none;
+  }
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .login-section {
+    justify-content: center;
+  }
+
+  .admin-logo {
+    width: 29.5%;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .image img {
+    display: none;
+  }
+  form {
+    width: 275px;
+  }
+  .admin-logo {
+    width: 36%;
+  }
+}
+/* Animation Keyframes */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
