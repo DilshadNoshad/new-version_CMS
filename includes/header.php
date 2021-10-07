@@ -84,10 +84,10 @@
             <div class="close-btn"><i class="icon-close"></i></div>
             <div class="row d-flex justify-content-center">
               <div class="col-md-8">
-                <form action="#">
+                <form action="" >
                   <div class="form-group">
                     <input
-                      type="search"
+                      type="text"
                       name="search"
                       id="search"
                       placeholder="What are you looking for?"

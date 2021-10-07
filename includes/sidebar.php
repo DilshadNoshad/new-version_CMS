@@ -1,13 +1,33 @@
 <aside class="col-lg-4">
           <!-- Widget [Search Bar Widget]-->
+          <?php
+if(isset($_POST['submit'])){
+  $search = $_POST['search'];
+
+  $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search%'";
+  $search_result = mysqli_query($connection, $query);
+
+  if(!$search_result){
+    die("Search Faled" . mysqli_error($connection));
+  }
+
+  $count = mysqli_num_rows($search_result);
+
+  if($count == 0){
+    echo "Result Not Found";
+  }else{
+    echo "Result Found";
+  }
+}
+?>
           <div class="widget search">
             <header>
               <h3 class="h6">Search the blog</h3>
             </header>
-            <form action="#" class="search-form">
+            <form action="#" method="post" class="search-form">
               <div class="form-group">
-                <input type="search" placeholder="What are you looking for?">
-                <button type="submit" class="submit"><i class="icon-search"></i></button>
+                <input type="text" name="search" placeholder="What are you looking for?">
+                <button type="submit" name="submit" class="submit"><i class="icon-search"></i></button>
               </div>
             </form>
           </div>
