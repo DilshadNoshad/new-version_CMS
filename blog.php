@@ -7,18 +7,18 @@
         <main class="posts-listing col-lg-8"> 
           <div class="container">
             <div class="row">
-              <?php
-              $query = 'SELECT * FROM posts';
-              $select_all_posts = mysqli_query($connection, $query);
+                  <?php
+                  $query = 'SELECT * FROM posts';
+                  $select_all_posts = mysqli_query($connection, $query);
 
-              while($row = mysqli_fetch_assoc($select_all_posts)){
-                $post_title = $row['post_title'];
-                $post_author = $row['post_author'];
-                $post_author_image = $row['post_author_image'];
-                $post_date = $row['post_date'];
-                $post_image = $row['post_image'];
-                $post_content = $row['post_content'];
-            ?>
+                  while($row = mysqli_fetch_assoc($select_all_posts)){
+                    $post_title = $row['post_title'];
+                    $post_author = $row['post_author'];
+                    $post_author_image = $row['post_author_image'];
+                    $post_date = $row['post_date'];
+                    $post_image = $row['post_image'];
+                    $post_content = $row['post_content'];
+                ?>
               <!-- post -->
               <div class="post col-xl-6">
                 <div class="post-thumbnail"><a href="post.html"><img src="img/<?php echo $post_image ?>" alt="..." class="img-fluid"></a></div>
