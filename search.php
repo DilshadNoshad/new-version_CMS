@@ -8,10 +8,24 @@
           <div class="container">
             <div class="row">
               <?php
-              $query = 'SELECT * FROM posts';
-              $select_all_posts = mysqli_query($connection, $query);
 
-              while($row = mysqli_fetch_assoc($select_all_posts)){
+                if(isset($_POST['submit'])){
+                    $search = $_POST['search'];
+                  
+                    $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search%'";
+                    $search_result = mysqli_query($connection, $query);
+                  
+                    if(!$search_result){
+                      die("Search Faled" . mysqli_error($connection));
+                    }
+                  
+                    $count = mysqli_num_rows($search_result);
+                  
+                    if($count == 0){
+                      echo "Result Not Found";
+                    }else{
+
+              while($row = mysqli_fetch_assoc($search_result)){
                 $post_title = $row['post_title'];
                 $post_author = $row['post_author'];
                 $post_author_image = $row['post_author_image'];
@@ -37,11 +51,11 @@
                   </footer>
                 </div>
               </div>
-
-         <?php } ?>
-            <!-- Pagination -->
-
             </div>
+         <?php }
+            }
+        } ?>
+            <!-- Pagination -->
             <nav aria-label="Page navigation example">
               <ul class="pagination pagination-template d-flex justify-content-center">
                 <li class="page-item"><a href="#" class="page-link"> <i class="fa fa-angle-left"></i></a></li>
