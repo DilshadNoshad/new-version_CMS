@@ -25,13 +25,13 @@
   max-width: 100%;
   width: 100%;
 }
-.date {
+.date_main {
   width: 100%;
   flex: 1;
   height: 100%;
 }
 
-.time {
+.time_main {
   width: 100%;
   flex: 1;
   position: relative;
@@ -44,7 +44,7 @@
   flex-direction: column;
 }
 
-.time::before {
+.time_main::before {
   content: "";
   position: absolute;
   left: 0;

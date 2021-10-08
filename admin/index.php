@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Gentelella Alela! |</title>
+    <title>D-Blogging | CMS</title>
 
     <!-- Bootstrap -->
     <link
@@ -45,6 +45,8 @@
     <link href="../build/css/custom.min.css" rel="stylesheet" />
     <!-- Timer Style -->
     <link href="./css/main.time.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="./images/site-logo.ico">
   </head>
 
   <body class="nav-md">
@@ -61,13 +63,13 @@
           <div class="row">
             <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
               <div class="flex_box main_box">
-                <div class="child_flex_box date">
+                <div class="child_flex_box date_main">
                   <div class="" data-text=" DAY /MONTH /YEAR">
                     <i class="fa fa-calendar"></i> DAY /MONTH /YEAR
                   </div>
                   <span class="counts" id="date"></span>
                 </div>
-                <div class="child_flex_box time">
+                <div class="child_flex_box time_main">
                   <div class="" data-text=" Current Time">
                     <i class="fa fa-clock-o"></i> Current Time
                   </div>
