@@ -43,6 +43,8 @@
     />
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet" />
+    <!-- Timer Style -->
+    <link href="./css/main.time.css" rel="stylesheet" />
   </head>
 
   <body class="nav-md">
@@ -55,6 +57,28 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
+          <!-- time -->
+          <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+              <div class="flex_box main_box">
+                <div class="child_flex_box date">
+                  <div class="" data-text=" DAY /MONTH /YEAR">
+                    <i class="fa fa-calendar"></i> DAY /MONTH /YEAR
+                  </div>
+                  <span class="counts" id="date"></span>
+                </div>
+                <div class="child_flex_box time">
+                  <div class="" data-text=" Current Time">
+                    <i class="fa fa-clock-o"></i> Current Time
+                  </div>
+                  <span class="counts" id="time"></span>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <br />
+
           <!-- top tiles -->
           <div class="row tile_count">
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
@@ -881,94 +905,15 @@
                       <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <div class="temperature">
-                            <b>Monday</b>, 07:30 AM
-                            <span>F</span>
-                            <span><b>C</b></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-4">
-                          <div class="weather-icon">
-                            <canvas
-                              height="84"
-                              width="84"
-                              id="partly-cloudy-day"
-                            ></canvas>
-                          </div>
-                        </div>
-                        <div class="col-sm-8">
-                          <div class="weather-text">
-                            <h2>Texas <br /><i>Partly Cloudy Day</i></h2>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-12">
-                        <div class="weather-text pull-right">
-                          <h3 class="degrees">23</h3>
-                        </div>
-                      </div>
-
-                      <div class="clearfix"></div>
-
-                      <div class="row weather-days">
-                        <div class="col-sm-2">
-                          <div class="daily-weather">
-                            <h2 class="day">Mon</h2>
-                            <h3 class="degrees">25</h3>
-                            <canvas
-                              id="clear-day"
-                              width="32"
-                              height="32"
-                            ></canvas>
-                            <h5>15 <i>km/h</i></h5>
-                          </div>
-                        </div>
-                        <div class="col-sm-2">
-                          <div class="daily-weather">
-                            <h2 class="day">Tue</h2>
-                            <h3 class="degrees">25</h3>
-                            <canvas height="32" width="32" id="rain"></canvas>
-                            <h5>12 <i>km/h</i></h5>
-                          </div>
-                        </div>
-                        <div class="col-sm-2">
-                          <div class="daily-weather">
-                            <h2 class="day">Wed</h2>
-                            <h3 class="degrees">27</h3>
-                            <canvas height="32" width="32" id="snow"></canvas>
-                            <h5>14 <i>km/h</i></h5>
-                          </div>
-                        </div>
-                        <div class="col-sm-2">
-                          <div class="daily-weather">
-                            <h2 class="day">Thu</h2>
-                            <h3 class="degrees">28</h3>
-                            <canvas height="32" width="32" id="sleet"></canvas>
-                            <h5>15 <i>km/h</i></h5>
-                          </div>
-                        </div>
-                        <div class="col-sm-2">
-                          <div class="daily-weather">
-                            <h2 class="day">Fri</h2>
-                            <h3 class="degrees">28</h3>
-                            <canvas height="32" width="32" id="wind"></canvas>
-                            <h5>11 <i>km/h</i></h5>
-                          </div>
-                        </div>
-                        <div class="col-sm-2">
-                          <div class="daily-weather">
-                            <h2 class="day">Sat</h2>
-                            <h3 class="degrees">26</h3>
-                            <canvas height="32" width="32" id="cloudy"></canvas>
-                            <h5>10 <i>km/h</i></h5>
-                          </div>
-                        </div>
-                        <div class="clearfix"></div>
-                      </div>
+                      <a
+                        class="weatherwidget-io"
+                        href="https://forecast7.com/en/24d8667d01/karachi/"
+                        data-label_1="KARACHI"
+                        data-label_2="WEATHER"
+                        data-font="Roboto Slab"
+                        data-theme="mountains"
+                        >KARACHI WEATHER</a
+                      >
                     </div>
                   </div>
                 </div>
@@ -1022,10 +967,43 @@
     <!-- bootstrap-daterangepicker -->
     <script src="../vendors/moment/min/moment.min.js"></script>
     <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-     <!-- jQuery custom content scroller -->
-     <script src="../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- jQuery custom content scroller -->
+    <script src="../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
+    <!-- date and time javascript -->
+    <script>
+      let a;
+      let date;
+      let time;
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      setInterval(() => {
+        a = new Date();
+        date = a.toLocaleDateString(undefined, options);
+        time = a.toLocaleTimeString("en-US");
+
+        document.getElementById("time").innerHTML = time;
+        document.getElementById("date").innerHTML = date;
+      }, 1000);
+    </script>
+    <!-- WeatherForcast -->
+    <script>
+      !(function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://weatherwidget.io/js/widget.min.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      })(document, "script", "weatherwidget-io-js");
+    </script>
   </body>
 </html>
