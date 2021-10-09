@@ -14,7 +14,7 @@
                     data-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <img src="images/img.jpg" alt="" />John Doe
+                    <img src="images/img.jpg" alt="" />Dilshad Noshad
                     <span class="fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">

@@ -5,6 +5,7 @@
   transition: 0.5s;
   transition-property: background, box-shadow;
   border: 2px solid #adb2b5;
+  cursor: pointer;
 }
 .main_box .counts {
   color: #fff;
@@ -68,7 +69,7 @@
     font-size: 1.5rem;
   }
 
-  .time::before {
+  .time_main::before {
     border: none;
   }
 }
