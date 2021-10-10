@@ -1,4 +1,6 @@
-        <!-- top navigation -->
+
+<?php include '../includes/db.php' ?> 
+<!-- top navigation -->
         <div class="top_nav">
           <div class="nav_menu">
             <nav>

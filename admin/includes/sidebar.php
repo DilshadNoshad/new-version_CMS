@@ -43,7 +43,10 @@
           </li>
 
           <li>
-            <a><i class="fa fa-wrench"></i> Comments </a>
+            <a href="./categories.php" ><i class="fa fa-wrench"></i> Categories </a>
+          </li>
+          <li>
+            <a><i class="fa fa-comments-o"></i> Comments </a>
           </li>
 
           <!-- <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
