@@ -130,23 +130,7 @@ include 'includes/update_categories.php';
                         <tbody>
 <?php showAllCategories() ?>
     
-<?php
-if(isset($_GET['delete'])){
-    $cat_delete = $_GET['delete'];
-
-    $query = "DELETE FROM categories WHERE cat_id = {$cat_delete}";
-
-    $selected_delete = mysqli_query($connection, $query);
-
-    
-    header("location: categories.php");
-
-    if(!$selected_delete){
-        die("Delete Query Failed" . mysqli_error($connection));
-    }
-
-}
-?>
+<?php deleteCategories(); ?>
 
                         </tbody>
                       </table>

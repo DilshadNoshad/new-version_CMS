@@ -34,7 +34,8 @@
     $query .= "WHERE cat_id = {$cat_id} ";
 
     $Update_query = mysqli_query($connection, $query);
-
+    
+    header("location: categories.php");
     if(!$Update_query){
     die("query Failed" . mysqli_error($connection));
     }
