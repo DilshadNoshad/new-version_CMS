@@ -28,7 +28,7 @@
         <h3>General</h3>
         <ul class="nav side-menu">
           <li>
-            <a><i class="fa fa-dashboard"></i> Dashboard </a>
+            <a href="./index.php"><i class="fa fa-dashboard"></i> Dashboard </a>
           </li>
 
           <li>
