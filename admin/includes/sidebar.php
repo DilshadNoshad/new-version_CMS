@@ -37,7 +37,7 @@
               <span class="fa fa-chevron-down"></span
             ></a>
             <ul class="nav child_menu">
-              <li><a href="tables.html">View All Posts</a></li>
+              <li><a href="./posts.php">View All Posts</a></li>
               <li><a href="tables_dynamic.html">Add Posts</a></li>
             </ul>
           </li>
