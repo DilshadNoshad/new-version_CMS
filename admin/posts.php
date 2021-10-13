@@ -63,13 +63,7 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-
-                  <div class="x_content">
-
-                    <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
-
-                    <div class="table-responsive">
-<?php
+                  <?php
 if(isset($_GET['source'])){
   $source = $_GET['source'];
 }
@@ -79,8 +73,8 @@ else{
 
 switch($source){
 
-  case '23':
-  echo "nice its 23";
+  case 'add_posts':
+  include 'includes/add_posts.php';
   break;
 
   case '200':
@@ -97,10 +91,7 @@ switch($source){
 
 }
 ?>
-                    </div>
-							
-						
-                  </div>
+
                 </div>
               </div>
             </div>

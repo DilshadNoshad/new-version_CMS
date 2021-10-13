@@ -61,7 +61,7 @@
         <div class="right_col" role="main">
           <!-- time -->
           <div class="row">
-            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
               <div class="flex_box main_box">
                 <div class="child_flex_box date_main">
                   <div class="" data-text=" DAY /MONTH /YEAR">
