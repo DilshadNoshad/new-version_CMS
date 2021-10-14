@@ -20,16 +20,16 @@ $post_comment_count =  4;
     <form method="post" enctype="multipart/form-data">
 
     <div class="col-md-9 col-sm-12  form-group">
-    <label class="col-form-label col-md-2 col-sm-2 label-align" for="post_category">Title</label>
+    <label class="col-form-label col-md-2 col-sm-2 label-align" for="title">Title</label>
     <div class="col-md-7 col-sm-10 ">
-    <input type="text"  name="post_category"  value="" class="form-control">
+    <input type="text"  name="title"  value="" class="form-control">
     </div>
     </div>
 
     <div class="col-md-6 col-sm-12  form-group">
-    <label class="col-form-label col-md-3 col-sm-2 label-align" for="post_category">Post Category Id </label>
+    <label class="col-form-label col-md-3 col-sm-2 label-align" for="post_category_id">Post Category Id </label>
     <div class="col-md-9 col-sm-10 ">
-    <input type="text"  name="post_category"  value="" class="form-control">
+    <input type="text"  name="post_category_id"  value="" class="form-control">
     </div>
     </div>
 
