@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>D-Blogging | CMS</title>
+<!-- Doctype and title header -->
+<?php include ('includes/head_title.php'); ?>
 
     <!-- Bootstrap -->
     <link
@@ -46,7 +38,6 @@
     <!-- Timer Style -->
     <link href="./css/main.time.css" rel="stylesheet" />
 
-    <link rel="shortcut icon" type="image/x-icon" href="./images/site-logo.ico">
   </head>
 
   <body class="nav-md">
