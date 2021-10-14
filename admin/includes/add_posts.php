@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_POST['create_post'])){
 $post_title =  $_POST['title'];
 $post_author =  $_POST['author'];
@@ -15,6 +16,15 @@ $post_date =  date('d-m-y');
 $post_comment_count =  4;
 
     move_uploaded_file($post_image_temp, "../img/$post_image");
+
+$query = "INSERT INTO posts(post_title, post_author, post_category_id, post_status, post_image, post_tags, post_content, post_date, post_comment_count) ";
+
+$query .= "VALUES('{$post_title}', '{$post_author}', '{$post_category_id}', '{$post_status}', '{$post_image}', '{$post_tags}', '{$post_content}', now(), '{$post_comment_count}') ";
+
+$insert_post_query = mysqli_query($connection, $query);
+
+confirm_query($insert_post_query);
+
 }
 ?>
     <form method="post" enctype="multipart/form-data">
