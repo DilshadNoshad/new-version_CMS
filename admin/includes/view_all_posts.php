@@ -18,6 +18,8 @@
                             <th class="column-title">Tags </th>
                             <th class="column-title">Comments </th>
                             <th class="column-title">Date </th>
+                            <th class="column-title"><span>Actions</span>
+                            </th>
                             <th class="bulk-actions" colspan="9">
                               <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
                             </th>
@@ -25,7 +27,7 @@
                         </thead>
 
                         <tbody>
-                        <?php
+<?php
 $query = 'SELECT * FROM posts';
 $select_all_posts = mysqli_query($connection, $query);
 
@@ -53,7 +55,19 @@ echo "<td><img width='100' src='../img/{$post_image}' alt='image'></td>";
 echo "<td>{$post_tags}</td>";
 echo "<td>{$post_comment_count}</td>";
 echo "<td>{$post_date}</td>";
+echo "<td><a class='btn btn-danger' href='posts.php?delete={$post_id}'><i class='fa fa-trash'></i></a></td>";
 echo "</tr>";
+}
+?>
+
+<?php
+if(isset($_GET['delete'])){
+    $delete_id = $_GET['delete'];
+
+    $query = "DELETE FROM posts ";
+    $query .= "WHERE post_id = $delete_id ";
+
+    $delete_selected_post_id = mysqli_query($connection, $query);
 }
 ?>
                         </tbody>

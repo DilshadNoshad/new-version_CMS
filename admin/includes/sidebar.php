@@ -38,7 +38,7 @@
             ></a>
             <ul class="nav child_menu">
               <li><a href="./posts.php">View All Posts</a></li>
-              <li><a href="tables_dynamic.html">Add Posts</a></li>
+              <li><a href="posts.php?source=add_posts">Add Posts</a></li>
             </ul>
           </li>
 
