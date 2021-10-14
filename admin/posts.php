@@ -69,8 +69,8 @@ switch($source){
   include 'includes/add_posts.php';
   break;
 
-  case '200':
-  echo "nice its 200";
+  case 'edit_posts':
+  include 'includes/edit_posts.php';
   break;
 
   case '50':
