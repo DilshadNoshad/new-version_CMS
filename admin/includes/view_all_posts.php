@@ -55,7 +55,7 @@ echo "<td><img width='100' src='../img/{$post_image}' alt='image'></td>";
 echo "<td>{$post_tags}</td>";
 echo "<td>{$post_comment_count}</td>";
 echo "<td>{$post_date}</td>";
-echo "<td><a class='btn btn-danger' href='posts.php?delete={$post_id}'><i class='fa fa-trash'></i></a></td>";
+echo "<td><a class='btn btn-primary' href='posts.php?source=edit_posts&p-id={$post_id}' ><i class='fa fa-pencil'></i></a><a class='btn btn-danger' href='posts.php?delete={$post_id}'><i class='fa fa-trash'></i></a></td>";
 echo "</tr>";
 }
 ?>
