@@ -1,7 +1,7 @@
 <?php
 if(isset($_GET['p-id'])){
 $select_update_id = $_GET['p-id'];
-$query = 'SELECT * FROM posts';
+$query = "SELECT * FROM posts WHERE post_id = $select_update_id ";
 $select_all_posts = mysqli_query($connection, $query);
 
 while($row = mysqli_fetch_assoc($select_all_posts)){
@@ -28,9 +28,22 @@ $post_date = $row['post_date'];
 </div>
 
 <div class="col-md-6 col-sm-12  form-group">
-<label class="col-form-label col-md-3 col-sm-2 label-align" for="post_category_id">Post Category Id </label>
+<label class="col-form-label col-md-3 col-sm-2 label-align" for="post_category_id">Select Category</label>
 <div class="col-md-9 col-sm-10 ">
-<input type="text" value="<?php echo $post_category_id ?>"  name="post_category_id"  value="" class="form-control">
+<select class="form-control">
+<?php
+$query = "SELECT * FROM categories";
+$fetch_all_categories = mysqli_query($connection, $query);
+
+confirm_query($fetch_all_categories);
+
+while($row = mysqli_fetch_assoc($fetch_all_categories)){
+$cat_id = $row['cat_id'];
+$cat_title = $row['cat_title']; 
+echo "<option value='{$cat_id}'>{$cat_title}</option>";
+}
+?> 
+                          </select>
 </div>
 </div>
 
@@ -74,7 +87,7 @@ for="post_image"
 >Post Image
 </label>
 <div class="col-md-9 col-sm-10">
-<input type="file" name="post_image" value="" class="form-control" />
+<img width="100" src="../img/<?php echo $post_image ?>" alt="">
 </div>
 </div>
 
