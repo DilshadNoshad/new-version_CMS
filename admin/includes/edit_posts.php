@@ -1,7 +1,7 @@
 <?php
 if(isset($_GET['p-id'])){
 $select_update_id = $_GET['p-id'];
-$query = "SELECT * FROM posts WHERE post_id = $select_update_id ";
+$query = "SELECT * FROM posts WHERE post_id = $select_update_id";
 $select_all_posts = mysqli_query($connection, $query);
 
 while($row = mysqli_fetch_assoc($select_all_posts)){
