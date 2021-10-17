@@ -20,7 +20,7 @@
                             <th class="column-title">Date </th>
                             <th class="column-title"><span>Actions</span>
                             </th>
-                            <th class="bulk-actions" colspan="9">
+                            <th class="bulk-actions" colspan="10">
                               <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
                             </th>
                           </tr>
